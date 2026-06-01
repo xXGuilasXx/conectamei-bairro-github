@@ -6,6 +6,11 @@ Plataforma web comunitária para conexão entre moradores e Microempreendedores 
 
 O **ConectaMEI Bairro** é uma aplicação web que facilita a conexão organizada entre moradores de um bairro e MEIs que prestam serviços locais (encanamento, eletricidade, pintura, limpeza, jardinagem, beleza, entre outros). A plataforma oferece catálogo de prestadores com filtros por categoria e bairro, formulário de solicitação de orçamento, painel de acompanhamento de pedidos e sistema de feedback/avaliação.
 
+## Links do Projeto
+
+- Aplicação publicada: https://conectameibairro.netlify.app/
+- Repositório GitHub: https://github.com/xXGuilasXx/conectamei-bairro-github
+
 ## Funcionalidades
 
 - **Catálogo de Prestadores:** Listagem de MEIs com filtros por categoria de serviço e bairro de atuação.
@@ -35,10 +40,10 @@ O **ConectaMEI Bairro** é uma aplicação web que facilita a conexão organizad
 
 ```bash
 # Clonar o repositório
-git clone <link-do-repositorio>
+git clone https://github.com/xXGuilasXx/conectamei-bairro-github.git
 
 # Entrar no diretório
-cd conectamei-bairro
+cd conectamei-bairro-github
 
 # Instalar dependências
 corepack pnpm install
