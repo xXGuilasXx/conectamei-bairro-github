@@ -10,6 +10,7 @@ O **ConectaMEI Bairro** é uma aplicação web que facilita a conexão organizad
 
 - Aplicação publicada: https://conectameibairro.netlify.app/
 - Repositório GitHub: https://github.com/xXGuilasXx/conectamei-bairro-github
+- Vídeo de apresentação: https://youtu.be/vtFV-EaJt2o
 
 ## Funcionalidades
 
