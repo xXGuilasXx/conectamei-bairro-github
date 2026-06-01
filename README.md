@@ -16,15 +16,15 @@ O **ConectaMEI Bairro** é uma aplicação web que facilita a conexão organizad
 
 ## Tecnologias Utilizadas
 
-| Componente | Tecnologia |
-|-----------|-----------|
-| Frontend | React 19 + TypeScript |
-| Estilização | Tailwind CSS 4 + shadcn/ui |
-| Build Tool | Vite 7 |
+| Componente   | Tecnologia                        |
+| ------------ | --------------------------------- |
+| Frontend     | React 19 + TypeScript             |
+| Estilização  | Tailwind CSS 4 + shadcn/ui        |
+| Build Tool   | Vite 7                            |
 | Persistência | localStorage (simulação para MVP) |
-| Ícones | Lucide React |
-| Animações | Framer Motion |
-| Roteamento | Wouter |
+| Ícones       | Lucide React                      |
+| Animações    | Framer Motion                     |
+| Roteamento   | Wouter                            |
 
 ## Pré-requisitos
 
@@ -35,7 +35,7 @@ O **ConectaMEI Bairro** é uma aplicação web que facilita a conexão organizad
 
 ```bash
 # Clonar o repositório
-git clone https://github.com/Juliano-Boaventura/conectamei-bairro.git
+git clone <link-do-repositorio>
 
 # Entrar no diretório
 cd conectamei-bairro
@@ -80,23 +80,22 @@ conectamei-bairro/
 
 ## Scripts Disponíveis
 
-| Comando | Descrição |
-|---------|-----------|
-| `pnpm dev` | Inicia o servidor de desenvolvimento |
-| `pnpm build` | Gera o build de produção |
-| `pnpm preview` | Visualiza o build de produção |
-| `pnpm check` | Verifica tipos TypeScript |
-| `pnpm format` | Formata o código com Prettier |
+| Comando                 | Descrição                            |
+| ----------------------- | ------------------------------------ |
+| `corepack pnpm dev`     | Inicia o servidor de desenvolvimento |
+| `corepack pnpm build`   | Gera o build de produção             |
+| `corepack pnpm preview` | Visualiza o build de produção        |
+| `corepack pnpm check`   | Verifica tipos TypeScript            |
+| `corepack pnpm format`  | Formata o código com Prettier        |
 
 ## Contexto Acadêmico
 
-Este projeto foi desenvolvido como trabalho da disciplina de Análise e Desenvolvimento de Sistemas da Universidade Cesumar (Unicesumar), utilizando metodologia Scrum, Canvas de Proposta de Valor, Business Model Canvas e Canvas MVP.
+Este projeto foi desenvolvido como trabalho da disciplina de Análise e Desenvolvimento de Sistemas da Universidade do Vale do Itajaí (UNIVALI), utilizando metodologia Scrum, Canvas de Proposta de Valor, Business Model Canvas e Canvas MVP.
 
-## Autor
+## Autores
 
-**Juliano Boaventura**  
-Curso de Análise e Desenvolvimento de Sistemas — Universidade Cesumar (Unicesumar)  
-E-mail: juliano.boaventura@edu.unicesumar.br
+**Guilherme Amaral Cardoso** e **Juliano Boaventura**  
+Curso de Análise e Desenvolvimento de Sistemas — Universidade do Vale do Itajaí (UNIVALI)
 
 ## Licença
 

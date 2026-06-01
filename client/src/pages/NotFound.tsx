@@ -29,7 +29,7 @@ export default function NotFound() {
           <div className="flex justify-center">
             <Button asChild>
               <Link href="/">
-              <Home className="w-4 h-4 mr-2" />
+                <Home className="w-4 h-4 mr-2" />
                 Voltar ao início
               </Link>
             </Button>

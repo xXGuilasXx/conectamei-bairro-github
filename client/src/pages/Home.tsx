@@ -1,16 +1,38 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowRight, Search, FileText, Star, Users, ShieldCheck, MapPin } from "lucide-react";
+import {
+  ArrowRight,
+  Search,
+  FileText,
+  Star,
+  Users,
+  ShieldCheck,
+  MapPin,
+} from "lucide-react";
 import { bairros, categorias, prestadores } from "@/lib/data";
 
-const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663511049766/AMmQMALUQtyfHWkNibXH3y/hero-community-PU24Zyiw7cZ2kgmYL2Uq5T.webp";
-const NEIGHBORS_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663511049766/AMmQMALUQtyfHWkNibXH3y/happy-neighbors-arccbxGySXosCPG3REQxm6.webp";
+const HERO_IMG =
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663511049766/AMmQMALUQtyfHWkNibXH3y/hero-community-PU24Zyiw7cZ2kgmYL2Uq5T.webp";
+const NEIGHBORS_IMG =
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663511049766/AMmQMALUQtyfHWkNibXH3y/happy-neighbors-arccbxGySXosCPG3REQxm6.webp";
 
 const steps = [
-  { icon: Search, title: "Busque", desc: "Encontre profissionais MEI por categoria e bairro." },
-  { icon: FileText, title: "Solicite", desc: "Envie um pedido de orçamento em segundos." },
-  { icon: Star, title: "Avalie", desc: "Compartilhe sua experiência e ajude a comunidade." },
+  {
+    icon: Search,
+    title: "Busque",
+    desc: "Encontre profissionais MEI por categoria e bairro.",
+  },
+  {
+    icon: FileText,
+    title: "Solicite",
+    desc: "Envie um pedido de orçamento em segundos.",
+  },
+  {
+    icon: Star,
+    title: "Avalie",
+    desc: "Compartilhe sua experiência e ajude a comunidade.",
+  },
 ];
 
 const stats = [
@@ -38,21 +60,31 @@ export default function Home() {
               <MapPin size={14} /> Serviços do seu bairro
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight">
-              Conecte-se aos <span className="text-green-300">profissionais</span> da sua comunidade
+              Conecte-se aos{" "}
+              <span className="text-green-300">profissionais</span> da sua
+              comunidade
             </h1>
             <p className="text-lg text-white/85 leading-relaxed max-w-md">
-              Encontre MEIs locais de confiança, solicite orçamentos e fortaleça a economia do seu bairro.
+              Encontre MEIs locais de confiança, solicite orçamentos e fortaleça
+              a economia do seu bairro.
             </p>
             <div className="flex flex-wrap gap-3">
-              <Button asChild size="lg" className="gap-2 shadow-lg hover:shadow-xl transition-shadow">
+              <Button
+                asChild
+                size="lg"
+                className="gap-2 shadow-lg hover:shadow-xl transition-shadow"
+              >
                 <Link href="/catalogo">
                   Explorar Catálogo <ArrowRight size={18} />
                 </Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="bg-white/10 text-white border-white/30 hover:bg-white/20 backdrop-blur-sm">
-                <Link href="/solicitar-orcamento">
-                  Solicitar Orçamento
-                </Link>
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="bg-white/10 text-white border-white/30 hover:bg-white/20 backdrop-blur-sm"
+              >
+                <Link href="/solicitar-orcamento">Solicitar Orçamento</Link>
               </Button>
             </div>
           </div>
@@ -62,7 +94,7 @@ export default function Home() {
       {/* Stats */}
       <section className="bg-primary py-5">
         <div className="container flex flex-wrap justify-center gap-8 md:gap-16">
-          {stats.map((s) => (
+          {stats.map(s => (
             <div key={s.label} className="text-center">
               <p className="text-3xl font-extrabold text-white">{s.value}</p>
               <p className="text-sm text-primary-foreground/80">{s.label}</p>
@@ -75,14 +107,20 @@ export default function Home() {
       <section className="py-20 bg-background">
         <div className="container">
           <div className="text-center mb-14">
-            <h2 className="text-3xl font-bold text-foreground">Como funciona</h2>
+            <h2 className="text-3xl font-bold text-foreground">
+              Como funciona
+            </h2>
             <p className="text-muted-foreground mt-2 max-w-md mx-auto">
-              Em três passos simples você encontra o profissional ideal para a sua necessidade.
+              Em três passos simples você encontra o profissional ideal para a
+              sua necessidade.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {steps.map(({ icon: Icon, title, desc }, i) => (
-              <Card key={title} className="relative border-none shadow-md hover:shadow-lg transition-shadow duration-200 group">
+              <Card
+                key={title}
+                className="relative border-none shadow-md hover:shadow-lg transition-shadow duration-200 group"
+              >
                 <CardContent className="pt-8 pb-6 px-6 text-center space-y-3">
                   <div className="w-14 h-14 mx-auto rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                     <Icon size={28} className="text-primary" />
@@ -101,10 +139,15 @@ export default function Home() {
       <section className="py-20 bg-secondary/30">
         <div className="container grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
-            <h2 className="text-3xl font-bold">Por que confiar no ConectaMEI?</h2>
+            <h2 className="text-3xl font-bold">
+              Por que confiar no ConectaMEI?
+            </h2>
             <ul className="space-y-4">
               {[
-                { icon: ShieldCheck, text: "Prestadores formalizados como MEI" },
+                {
+                  icon: ShieldCheck,
+                  text: "Prestadores formalizados como MEI",
+                },
                 { icon: Users, text: "Indicações da própria comunidade" },
                 { icon: Star, text: "Avaliações transparentes de vizinhos" },
                 { icon: MapPin, text: "Profissionais do seu bairro" },

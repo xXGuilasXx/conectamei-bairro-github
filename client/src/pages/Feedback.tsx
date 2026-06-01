@@ -16,9 +16,30 @@ interface FeedbackItem {
 }
 
 const feedbacksIniciais: FeedbackItem[] = [
-  { id: "1", nome: "Ana Paula", nota: 5, comentario: "Plataforma muito fácil de usar! Encontrei um encanador em minutos.", data: "2026-05-20" },
-  { id: "2", nome: "Roberto", nota: 4, comentario: "Gostei da ideia, mas gostaria de mais prestadores na minha região.", data: "2026-05-18" },
-  { id: "3", nome: "Fernanda", nota: 5, comentario: "Excelente iniciativa para o bairro. Já indiquei para vizinhos.", data: "2026-05-15" },
+  {
+    id: "1",
+    nome: "Ana Paula",
+    nota: 5,
+    comentario:
+      "Plataforma muito fácil de usar! Encontrei um encanador em minutos.",
+    data: "2026-05-20",
+  },
+  {
+    id: "2",
+    nome: "Roberto",
+    nota: 4,
+    comentario:
+      "Gostei da ideia, mas gostaria de mais prestadores na minha região.",
+    data: "2026-05-18",
+  },
+  {
+    id: "3",
+    nome: "Fernanda",
+    nota: 5,
+    comentario:
+      "Excelente iniciativa para o bairro. Já indiquei para vizinhos.",
+    data: "2026-05-15",
+  },
 ];
 
 const FEEDBACKS_KEY = "conectamei_feedbacks";
@@ -35,10 +56,16 @@ function getFeedbacks(): FeedbackItem[] {
   }
 }
 
-function StarRating({ value, onChange }: { value: number; onChange: (v: number) => void }) {
+function StarRating({
+  value,
+  onChange,
+}: {
+  value: number;
+  onChange: (v: number) => void;
+}) {
   return (
     <div className="flex gap-1">
-      {[1, 2, 3, 4, 5].map((n) => (
+      {[1, 2, 3, 4, 5].map(n => (
         <button
           key={n}
           type="button"
@@ -48,7 +75,9 @@ function StarRating({ value, onChange }: { value: number; onChange: (v: number) 
         >
           <Star
             size={24}
-            className={n <= value ? "text-amber-400 fill-amber-400" : "text-gray-300"}
+            className={
+              n <= value ? "text-amber-400 fill-amber-400" : "text-gray-300"
+            }
           />
         </button>
       ))}
@@ -90,9 +119,12 @@ export default function Feedback() {
     toast.success("Feedback enviado! Obrigado por contribuir.");
   };
 
-  const mediaNotas = feedbacks.length > 0
-    ? (feedbacks.reduce((acc, f) => acc + f.nota, 0) / feedbacks.length).toFixed(1)
-    : "0";
+  const mediaNotas =
+    feedbacks.length > 0
+      ? (
+          feedbacks.reduce((acc, f) => acc + f.nota, 0) / feedbacks.length
+        ).toFixed(1)
+      : "0";
 
   return (
     <div className="py-10">
@@ -103,7 +135,9 @@ export default function Feedback() {
           </div>
           <div>
             <h1 className="text-3xl font-bold">Feedback</h1>
-            <p className="text-muted-foreground text-sm">Avalie a plataforma e ajude-nos a melhorar.</p>
+            <p className="text-muted-foreground text-sm">
+              Avalie a plataforma e ajude-nos a melhorar.
+            </p>
           </div>
         </div>
 
@@ -112,14 +146,24 @@ export default function Feedback() {
           <div className="text-center">
             <p className="text-3xl font-extrabold text-primary">{mediaNotas}</p>
             <div className="flex gap-0.5 justify-center mt-1">
-              {[1, 2, 3, 4, 5].map((n) => (
-                <Star key={n} size={14} className={n <= Math.round(Number(mediaNotas)) ? "text-amber-400 fill-amber-400" : "text-gray-300"} />
+              {[1, 2, 3, 4, 5].map(n => (
+                <Star
+                  key={n}
+                  size={14}
+                  className={
+                    n <= Math.round(Number(mediaNotas))
+                      ? "text-amber-400 fill-amber-400"
+                      : "text-gray-300"
+                  }
+                />
               ))}
             </div>
           </div>
           <div>
             <p className="text-sm font-medium">{feedbacks.length} avaliações</p>
-            <p className="text-xs text-muted-foreground">Média geral da plataforma</p>
+            <p className="text-xs text-muted-foreground">
+              Média geral da plataforma
+            </p>
           </div>
         </div>
 
@@ -132,7 +176,12 @@ export default function Feedback() {
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="space-y-2">
                 <Label htmlFor="fb-nome">Seu nome</Label>
-                <Input id="fb-nome" placeholder="Ex: João" value={nome} onChange={(e) => setNome(e.target.value)} />
+                <Input
+                  id="fb-nome"
+                  placeholder="Ex: João"
+                  value={nome}
+                  onChange={e => setNome(e.target.value)}
+                />
               </div>
               <div className="space-y-2">
                 <Label>Nota</Label>
@@ -140,7 +189,13 @@ export default function Feedback() {
               </div>
               <div className="space-y-2">
                 <Label htmlFor="fb-comentario">Comentário</Label>
-                <Textarea id="fb-comentario" placeholder="O que achou da plataforma?" rows={3} value={comentario} onChange={(e) => setComentario(e.target.value)} />
+                <Textarea
+                  id="fb-comentario"
+                  placeholder="O que achou da plataforma?"
+                  rows={3}
+                  value={comentario}
+                  onChange={e => setComentario(e.target.value)}
+                />
               </div>
               <Button type="submit">Enviar Feedback</Button>
             </form>
@@ -150,16 +205,26 @@ export default function Feedback() {
         {/* List */}
         <h2 className="text-xl font-bold mb-4">Avaliações recentes</h2>
         <div className="space-y-4">
-          {feedbacks.map((f) => (
+          {feedbacks.map(f => (
             <Card key={f.id}>
               <CardContent className="p-4">
                 <div className="flex items-center justify-between mb-2">
                   <span className="font-semibold">{f.nome}</span>
-                  <span className="text-xs text-muted-foreground">{new Date(f.data).toLocaleDateString("pt-BR")}</span>
+                  <span className="text-xs text-muted-foreground">
+                    {new Date(f.data).toLocaleDateString("pt-BR")}
+                  </span>
                 </div>
                 <div className="flex gap-0.5 mb-2">
-                  {[1, 2, 3, 4, 5].map((n) => (
-                    <Star key={n} size={14} className={n <= f.nota ? "text-amber-400 fill-amber-400" : "text-gray-300"} />
+                  {[1, 2, 3, 4, 5].map(n => (
+                    <Star
+                      key={n}
+                      size={14}
+                      className={
+                        n <= f.nota
+                          ? "text-amber-400 fill-amber-400"
+                          : "text-gray-300"
+                      }
+                    />
                   ))}
                 </div>
                 <p className="text-sm text-muted-foreground">{f.comentario}</p>

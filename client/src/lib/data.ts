@@ -47,9 +47,14 @@ export const prestadores: Prestador[] = [
     nome: "Carlos Encanamentos",
     categoria: "Encanador",
     bairro: "Vila Nova",
-    descricao: "Serviços de encanamento residencial e comercial. Desentupimento, instalação e manutenção hidráulica.",
+    descricao:
+      "Serviços de encanamento residencial e comercial. Desentupimento, instalação e manutenção hidráulica.",
     avaliacao: 4.8,
-    servicos: ["Desentupimento", "Instalação de torneiras", "Reparo de vazamentos"],
+    servicos: [
+      "Desentupimento",
+      "Instalação de torneiras",
+      "Reparo de vazamentos",
+    ],
     disponivel: true,
     telefone: "(11) 99999-0001",
   },
@@ -58,9 +63,14 @@ export const prestadores: Prestador[] = [
     nome: "Elétrica do Marcos",
     categoria: "Eletricista",
     bairro: "Jardim das Flores",
-    descricao: "Instalações elétricas, troca de fiação, quadros de energia e iluminação residencial.",
+    descricao:
+      "Instalações elétricas, troca de fiação, quadros de energia e iluminação residencial.",
     avaliacao: 4.6,
-    servicos: ["Troca de fiação", "Instalação de tomadas", "Quadros de energia"],
+    servicos: [
+      "Troca de fiação",
+      "Instalação de tomadas",
+      "Quadros de energia",
+    ],
     disponivel: true,
     telefone: "(11) 99999-0002",
   },
@@ -69,7 +79,8 @@ export const prestadores: Prestador[] = [
     nome: "Pintura & Arte - Dona Lúcia",
     categoria: "Pintor",
     bairro: "Vila Nova",
-    descricao: "Pintura residencial interna e externa, textura, grafiato e acabamentos especiais.",
+    descricao:
+      "Pintura residencial interna e externa, textura, grafiato e acabamentos especiais.",
     avaliacao: 4.9,
     servicos: ["Pintura interna", "Pintura externa", "Textura e grafiato"],
     disponivel: false,
@@ -80,7 +91,8 @@ export const prestadores: Prestador[] = [
     nome: "LimpaBem Serviços",
     categoria: "Limpeza",
     bairro: "Centro",
-    descricao: "Limpeza residencial, pós-obra, limpeza de estofados e higienização de ambientes.",
+    descricao:
+      "Limpeza residencial, pós-obra, limpeza de estofados e higienização de ambientes.",
     avaliacao: 4.5,
     servicos: ["Limpeza residencial", "Pós-obra", "Higienização de estofados"],
     disponivel: true,
@@ -91,7 +103,8 @@ export const prestadores: Prestador[] = [
     nome: "Salão da Rê",
     categoria: "Beleza",
     bairro: "Boa Vista",
-    descricao: "Cortes, coloração, tratamentos capilares, manicure e pedicure a domicílio.",
+    descricao:
+      "Cortes, coloração, tratamentos capilares, manicure e pedicure a domicílio.",
     avaliacao: 4.7,
     servicos: ["Corte feminino", "Coloração", "Manicure e pedicure"],
     disponivel: true,
@@ -102,7 +115,8 @@ export const prestadores: Prestador[] = [
     nome: "TechBairro - Suporte",
     categoria: "Informática",
     bairro: "São Jorge",
-    descricao: "Manutenção de computadores, formatação, redes Wi-Fi e suporte técnico remoto.",
+    descricao:
+      "Manutenção de computadores, formatação, redes Wi-Fi e suporte técnico remoto.",
     avaliacao: 4.4,
     servicos: ["Formatação", "Configuração de rede", "Suporte remoto"],
     disponivel: true,
@@ -113,7 +127,8 @@ export const prestadores: Prestador[] = [
     nome: "Pedreiro Silva",
     categoria: "Pedreiro",
     bairro: "Vila Nova",
-    descricao: "Construção, reforma, reboco, contrapiso e pequenos reparos em alvenaria.",
+    descricao:
+      "Construção, reforma, reboco, contrapiso e pequenos reparos em alvenaria.",
     avaliacao: 4.3,
     servicos: ["Reforma", "Reboco", "Contrapiso"],
     disponivel: false,
@@ -124,7 +139,8 @@ export const prestadores: Prestador[] = [
     nome: "Jardins do Bairro",
     categoria: "Jardinagem",
     bairro: "Jardim das Flores",
-    descricao: "Manutenção de jardins, poda, plantio, paisagismo e cuidados com gramados.",
+    descricao:
+      "Manutenção de jardins, poda, plantio, paisagismo e cuidados com gramados.",
     avaliacao: 4.6,
     servicos: ["Poda", "Plantio", "Manutenção de gramado"],
     disponivel: true,
@@ -147,7 +163,9 @@ export function getPedidos(): Pedido[] {
   }
 }
 
-export function addPedido(pedido: Omit<Pedido, "id" | "data" | "status">): Pedido {
+export function addPedido(
+  pedido: Omit<Pedido, "id" | "data" | "status">
+): Pedido {
   const pedidos = getPedidos();
   const novo: Pedido = {
     ...pedido,
@@ -162,7 +180,7 @@ export function addPedido(pedido: Omit<Pedido, "id" | "data" | "status">): Pedid
 
 export function updatePedidoStatus(id: string, status: Pedido["status"]) {
   const pedidos = getPedidos();
-  const idx = pedidos.findIndex((p) => p.id === id);
+  const idx = pedidos.findIndex(p => p.id === id);
   if (idx >= 0) {
     pedidos[idx].status = status;
     localStorage.setItem(PEDIDOS_KEY, JSON.stringify(pedidos));
